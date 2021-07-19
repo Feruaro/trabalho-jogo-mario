@@ -1,11 +1,12 @@
-programa
-{
+programa {
+	
 	inclua biblioteca Util
 	inclua biblioteca Teclado  --> t
 	inclua biblioteca Graficos --> g
 	inclua biblioteca Sons --> s
-	funcao inicio()
-	{
+	
+	funcao inicio(){
+		
 	     inteiro imagem = g.carregar_imagem("mario.png"), imagem2 = g.carregar_imagem("moeda_mario.png")
 		inteiro imagem3 = g.carregar_imagem("estrela.png"), imagem4 = g.carregar_imagem("final.png")
 		inteiro imagem5 = g.carregar_imagem("super_mario.png")
@@ -16,14 +17,14 @@ programa
 		inteiro recolhe = 0, pontos = 0
 		inteiro somMoeda = s.carregar_som("efeito_sonoro_moeda.mp3") 
 		inteiro somColisao = s.carregar_som("efeito_sonoro_colisao.mp3")
-		//inteiro somJogo = s.carregar_som("musica_mario.mp3") 
-		//inteiro somFim = s.carregar_som("musica_fim.mp3")		
+		
 		g.iniciar_modo_grafico(verdadeiro)
 		g.definir_dimensoes_janela(1000,600)		
 		fundoBranco()
 		desenhaInicio(comeco)		
 	     g.renderizar()	
 	     Util.aguarde(3000)
+		
 		enquanto (verdadeiro) {			
 			//sortear poesição x e y das moedas e guardar nos vetores 
 			para(inteiro i=0; i<Util.numero_elementos(x); i++) {
@@ -200,7 +201,6 @@ programa
              }           	                                   	                                                         			               	                                   	                                                         		
 	    } retorne retorno 	   
 	}
-	// "recolher" moedas: 1)
 	funcao logico recolherMoeda (inteiro ma[], inteiro moe[][], inteiro i) {
 	    logico retorno = falso		
 	    se(ma[1]+ma[3]>=moe[i][1] e ma[2]+ma[4]>=moe[i][2] e ma[2]<=moe[i][2]+moe[i][4] e ma[1]<=moe[i][1]+moe[i][3]) {
@@ -209,17 +209,14 @@ programa
 	}	
 	funcao vazio trocaMoedas (inteiro i, inteiro moeda[][]) { 
 	    inteiro reserva [5], x = i, y = Util.numero_linhas(moeda) 
-	    // "recolher" moedas: 2)
 	    para(inteiro r=0; r<Util.numero_elementos(reserva); r++) {
 	        reserva [r] = moeda [i][r]
 	    }
-	     // "recolher" moedas: 3)
 	    para(x = i; x < (y - 1); x++) {		    	
 	        para(inteiro m=0; m<Util.numero_colunas(moeda); m++) { 
 		       moeda [x][m] = moeda [(x+1)][m]
 		   }		    
 	    } 
-	     // "recolher" moedas: 2)
 	    para(inteiro r=0; r<Util.numero_elementos(reserva); r++) {
 	        moeda [(y-1)][r] = reserva [r]	       
 	    }	
@@ -253,7 +250,7 @@ programa
  * Esta seção do arquivo guarda informações do Portugol Studio.
  * Você pode apagá-la se estiver utilizando outro editor.
  * 
- * @POSICAO-CURSOR = 2005; 
+ * @POSICAO-CURSOR = 9784; 
  * @PONTOS-DE-PARADA = ;
  * @SIMBOLOS-INSPECIONADOS = ;
  * @FILTRO-ARVORE-TIPOS-DE-DADO = inteiro, real, logico, cadeia, caracter, vazio;
